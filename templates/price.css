@@ -1,0 +1,25 @@
+section.price > header{
+}
+
+section.price .memory{
+    margin-top: 1.5em;
+    padding-top: 1.5em;
+    border-top: 1px solid var(--color-dialog-text);
+}
+
+section.price .memory .storage{
+    margin: 0.5em 0;
+    font-size: 0.75em;
+}
+
+section.price .memory .storage .item{
+    display: flex;
+}
+
+section.price .memory .storage .item span{
+    margin: 0.5em;
+}
+section.price .memory .storage .item span.dots{
+    flex-grow: 1;
+    border-bottom: 3px dotted var(--color-dialog-text);
+}

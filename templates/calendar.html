@@ -1,0 +1,22 @@
+<!-- unload --><link rel="stylesheet" type="text/css" href="theme.css">
+<section class="dialog calendar" v-if="calendar.visible">
+    <header>
+        <button class="button toolbutton" v-on:click="calendar_update(calendar.year, calendar.month - 1)">&ltri;</button>
+        <div>{{ calendar.displayMonth }}</div>
+        <button class="button toolbutton" v-on:click="calendar_update(calendar.year, calendar.month + 1)">&rtri;</button>
+    </header>
+    
+    <table class="margin-around-v">
+        <thead>
+            <tr><th>D</th><th>S</th><th>T</th><th>Q</th><th>Q</th><th>S</th><th>S</th></tr>
+        </thead>
+        <tbody>
+            <tr v-for="week in calendar.days">
+                <td v-for="day in week" v-bind:class="{selected:day && day.selected, today:day && day.today}"><a href="#calendar_pick" v-on:click.prevent="day && calendar_pick(day.display, false)">{{ (day && day.display) || '' }}</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="button" v-on:click="calendar_pick()">Escolher</button>
+    <button class="button dialog-color-priority margin-around-v" v-on:click="calendar_hide()">Cancelar</button>
+</section>

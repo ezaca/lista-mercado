@@ -1,0 +1,18 @@
+<!-- unload --><link rel="stylesheet" type="text/css" href="theme.css">
+
+<section class="window list">
+    <div class="client items" id="editor_background">
+        <div v-for="item in list.items" v-bind:class="{'item':true, 'done':item.done}">
+            <div class="done interactable"><label><input type="checkbox" v-model="item.done"></label></div>
+            <div class="name" v-bind:class="{ done:item.done }"><span class="actual">{{ item.name }}</span><span class="emoji">{{ item.emoji ?? '' }}</span></div>
+            <div class="price" v-if="item.price && item.amount > 1">{{ item.amount }} &times; {{ Utils.priceString(item.price) }}</div>
+            <a class="paid interactable" href="#" @click="list_define_price(item.name)">
+                <span v-if="(!item.price) || !item.amount">Definir</span>
+                <span v-if="item.price && item.amount > 1">{{ Utils.priceString(item.price, item.amount) }}</span>
+                <span v-if="item.price && item.amount == 1">{{ Utils.priceString(item.price) }}</span>
+            </a>
+            <div class="last"><span class="price">{{ (item.last?.price && Utils.priceString(item.last.price)) || "" }}</span> <span class="date">{{ (item.last?.date && moment(item.last.date).fromNow()) || "" }}</span></div>
+        </div>
+    </div>
+    <textarea class="client editor" id="editor" @input="list_update" @scroll.passive="list_scroll" spellcheck="false"></textarea>
+</section>

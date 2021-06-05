@@ -1,0 +1,57 @@
+section.calendar > header{
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    width: 100%;
+    height: var(--size-toolbutton);
+    line-height: var(--size-toolbutton);
+    text-align: center;
+    color: var(--color-dialog-text);
+}
+section.calendar > header button{
+}
+section.calendar > header div{
+    flex-grow: 1;
+}
+section.calendar > header div::first-letter{
+    text-transform: uppercase;
+}
+section > table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+section > table th{
+    opacity: 0.35;
+}
+
+section > table th,
+section > table td{
+    color: var(--color-dialog-text);
+    width: 14.2857%;
+    text-align: center;
+}
+
+section > table td.selected{
+    background-color: var(--color-highlight);
+    color: var(--color-highlight-text);
+}
+
+section > table td.today{
+    border: 1px solid white;
+}
+
+section > table td a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    line-height: 10vw;
+}
+section > table td:not(.selected) a{
+    background-color: var(--color-dialog);
+}
+section > table td a:hover{
+    filter: brightness(1.1);
+}

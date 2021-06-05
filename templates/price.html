@@ -1,0 +1,58 @@
+<!-- unload --><link rel="stylesheet" type="text/css" href="theme.css">
+
+<section class="dialog price" v-if="price.visible">
+    <!-- unload --><header class="font-size-normal">{{ price.title }}</header>
+    <form class="large-margin-around-v">
+        <div class="flex-half">
+            <label>
+                <select v-model="price.unit">
+                    <option value="un" v-for="unit in price.availableUnits" v-bind:value="unit.id">{{ unit.title }}</option>
+                </select>
+            </label>
+        </div>
+        <div class="flex">
+            <label class="flex-half">
+                <div class="font-size-small">Quantiadade</div>
+                <input type="number" class="input" v-model="price.amount" v-on:input="price_update('amount')" min="0" max="999999" step="1">
+            </label>
+            <label class="flex-spaced">
+                <div class="font-size-small">&nbsp;</div>
+                &times;
+            </label>
+            <label class="flex-half">
+                <div class="font-size-small">Preço</div>
+                <input type="number" class="input" v-model="price.price" v-on:input="price_update('price')" min="0" max="999999" step="0.1">
+            </label>
+        </div>
+        <label>
+            <div class="font-size-small">Total</div>
+            <input type="number" class="input" v-model="price.total" v-on:input="price_update('total')" min="0" max="999999" step="0.1">
+        </label>
+    </form>
+
+    <div>
+        <div class="flex" v-if="price.okCancel">
+            <button class="button flex-half dialog-color-priority" v-on:click="price_hide()">Cancelar</button>
+            <button class="button flex-half" v-on:click="price_submit()">Confirmar</button>
+        </div>
+        <div class="flex" v-if="!price.okCancel">
+            <button class="button flex-half" v-on:click="price_hide()">Fechar</button>
+        </div>
+    </div>
+
+    <div class="memory">
+        <div class="flex">
+            <button class="button flex-half dialog-color-priority" v-on:click="price_history_add()">Memorizar</button>
+        </div>
+        <div class="storage">
+            <div class="item margin-around-v" v-for="item in price.history">
+                <span>{{ item.amount }}</span>
+                <span>&times;</span>
+                <span>{{ Utils.currencyString(item.price) }}</span>
+                <span class="dots"></span>
+                <span>{{ Utils.currencyString(item.total) }}</span>
+            </div>
+        </div>
+        <button class="button dialog-color-priority" v-on:click="price_history_clear()">Limpar</button>
+    </div>
+</section>

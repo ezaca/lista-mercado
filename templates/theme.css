@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import './forms.css';
+@import './sidemenu.css';
+@import './list.css';
+@import './calendar.css';
+@import './price.css';
+@import './toast.css';
+
+body{
+    --color-primary: #3F51B5;
+    --color-primary-text: white;
+    --color-dialog: #3F51B5;
+    --color-dialog-text: white;
+    --color-light: #7985CB;
+    --color-light-text: white;
+    --color-button: #19237D;
+    --color-button-text: white;
+    --color-window: white;
+    --color-window-text: black;
+    --color-window-small: #777;
+    --color-highlight: #FFC927;
+    --color-highlight-text: black;
+    --color-marker: #FFC927;
+    --color-marker-text: black;
+    --color-toast: #B387FF;
+    --color-toast-text: black;
+    --color-toast-border:  #B387FF;
+    
+    --font-normal: 4.6666vw;
+    --font-header: 3.5555vw;
+    --font-small: 3.1111vw;
+    
+    --size-toolbutton: 10vw;
+    --size-title: 10vw;
+    --height-button: 10vw;
+    --size-list-item: calc(var(--font-normal) * 4);
+    --size-toast: 10vw;
+    --size-toast-full: 50vw;
+    --size-toast-half: calc(var(--size-toast) / 2);
+}
+
+@media (orientation: landscape) {
+    body{
+        --font-normal: 4.6666vh;
+        --font-header: 3.5555vh;
+        --font-small: 3.1111vh;
+        
+        --size-toolbutton: 10vh;
+        --size-title: var(--size-toolbutton);
+        --height-button: var(--size-toolbutton);
+        --size-toast: 10vh;
+        --size-toast-full: 50vh;
+    }
+}
+
+*, *::after,*::before{
+    box-sizing: border-box;
+    font: inherit;
+    color: inherit;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+html{
+    height: 100vh;
+    user-select: none;
+    overflow: hidden;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    font-size: var(--font-normal);
+    background-color: var(--color-window);
+    color: var(--color-window-text);
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+}
+
+#app{
+    overflow: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#app > header{
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    display: flex;
+    font-size: var(--font-normal);
+    line-height: var(--size-title);
+    height: var(--size-title);
+    width: 100%;
+}
+#app > header > div{
+    margin-left: 5vw;
+}
+
+section.dialog{
+    background-color: var(--color-dialog);
+    color: var(--color-dialog-text);
+    position: absolute;
+    top: var(--size-title);
+    right: 0; bottom: 0; left: 0;
+    padding: 5vw;
+    overflow: auto;
+    z-index: 1000;
+}
+
+.button{
+    background-color: var(--color-button);
+    color: var(--color-button-text);
+    border: none;
+    cursor: pointer;
+    height: var(--size-toolbutton);
+    line-height: 100%;
+    width: 100%;
+}
+.button:hover,
+.button:active{
+    filter: brightness(1.15);
+}
+
+.button.toolbutton{
+    width: var(--size-toolbutton);
+}
+
+select{
+    background-color: var(--color-window);
+    color: var(--color-window-text);
+    width: 100%;
+    padding: 1vw 0;
+}
+
+.dialog-color-priority{ background-color: var(--color-dialog) !important; color: var(--color-dialog-text) !important; }
+.light-color-priority{ background-color: var(--color-light) !important; color: var(--color-light-text) !important; }
+.font-size-normal{ font-size: var(--font-normal); }
+.font-size-header{ font-size: var(--font-header); }
+.font-size-small{ font-size: var(--font-small); }
+.margin-around{ margin: 2vh; }
+.margin-around-v{ margin: 2vh 0; }
+.margin-around-h{ margin: 0 2vh; }
+.large-margin-around{ margin: 5vh; }
+.large-margin-around-v{ margin: 5vh 0; }
+.large-margin-around-h{ margin: 0 5vh; }
+
+.flex{ display: flex;  }
+.flex-grow{ flex-grow: 1; }
+.flex-half { width: 100%; margin: 0; padding: 0; }
+.flex-spaced { margin: 0 2vw; }

@@ -1,0 +1,26 @@
+section.sidemenu, section.sidemenu .overlay{
+    top: 0;
+    overflow: visible;
+    position: absolute;
+    z-index: 2000;
+}
+section.sidemenu{
+    left: 0;
+    width: 50vw;
+    height: 100%;
+    background-color: var(--color-dialog);
+    color: var(--color-dialog-text);
+    padding: 0 2vw;
+}
+section.sidemenu .overlay{
+    left: 50vw;
+    width: 50vw;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.5;
+}
+section.sidemenu header{
+    font-size: var(--font-header);
+    line-height: calc(var(--font-normal) * 3);
+    text-align: center;
+}

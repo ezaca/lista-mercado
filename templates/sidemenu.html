@@ -1,0 +1,7 @@
+<!-- unload --><link rel="stylesheet" type="text/css" href="theme.css">
+<section class="sidemenu" v-if="sidemenu.visible">
+    <header>Ferramentas</header>
+    <button class="button dialog-color-priority" @click="sidemenu_start">Início</button>
+    <button class="button dialog-color-priority" @click="sidemenu_calculator">Calculadora</button>
+    <div class="overlay" @click="sidemenu.visible = false"></div>
+</section>

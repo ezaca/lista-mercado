@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Lista de Compras</title>
+    <style type="text/css">
+        body.loading #app { display: none; }
+        body.loading .loading { display: block; }
+        body:not(.loading) .loading { display: none; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="templates/theme.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<div id="toasts"></div>
+<body class="loading">
+    <div id="app">
+        <header class="flex">
+            <button class="button toolbutton" @click="sidemenu.visible = true"><span class="material-icons">menu</span></button>
+            <div class="flex-grow">{{ displayAppTitle }}</div>
+        </header>
+
+        <section class="toolbar flex">
+            <button class="button light-color-priority" @click="list_clear">Limpar</button>
+            <!-- <button class="button light-color-priority" onclick="alert('Ah, esta ação ainda não foi implementada. Talvez demore vários dias.')">Finalizar</button> -->
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment-with-locales.min.js" integrity="sha512-LGXaggshOkD/at6PFNcp2V2unf9LzFq6LE+sChH7ceMTDP0g2kn6Vxwgg7wkPP7AAtX+lmPqPdxB47A0Nz0cMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="libs/emojis.js"></script>
+    <script type="text/javascript" src="libs/Init.js"></script>
+    <script type="text/javascript" src="libs/Utils.js"></script>
+    <script type="text/javascript" src="libs/App.js"></script>
+    <script type="text/javascript" src="libs/Vue_list.js"></script>
+    <script type="text/javascript" src="libs/Vue_sidemenu.js"></script>
+    <script type="text/javascript" src="libs/Vue_calendar.js"></script>
+    <script type="text/javascript" src="libs/Vue_price.js"></script>
+    <script type="text/javascript" src="libs/DatabaseHistory.js"></script>
+    <script type="text/javascript" src="libs/DatabaseEmoji.js"></script>
+    <script type="text/javascript" defer>
+        Init.load('#app', [
+            fetch('templates/list.html'),
+            fetch('templates/price.html'),
+            fetch('templates/calendar.html'),
+            fetch('templates/sidemenu.html'),
+        ]);
+    </script>
+</body>
+</html>
