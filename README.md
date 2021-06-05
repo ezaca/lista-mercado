@@ -8,6 +8,11 @@ quando for ao mercado. Este aplicativo foca em compras recorrentes, como comida
 e itens para a casa. Pense nele como um bloco de notas, mas com um contexto
 específico.
 
+[Acesse o site](https://ezaca.github.io/lista-mercado/) (recomenda-se acesso por celular)
+
+:warning: **ATENÇÃO: O aplicativo é melhor visto em celulares e tablets. Pode
+ parecer estranho na tela de um computador.**
+
 ## Motivação
 
 Eu utilizo um bloco de anotações básico no celular para contrlar as minhas
@@ -22,9 +27,6 @@ aplicativo bastante informal, não utiliza nenhuma técnica, framework ou sequer
 atende bem o propósito. Eu também não quis configurar um ambiente de
 desenvolvimento adequado apenas por causa dele. Por isso, seja bem-vindo,
 só "não repare na bagunça".
-
-:warning: **ATENÇÃO: O aplicativo é melhor visto em celulares e tablets. Pode
- parecer estranho na tela de um computador.**
 
 ## Situação Atual
 
