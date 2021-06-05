@@ -15,7 +15,7 @@ específico.
 
 ## Motivação
 
-Eu utilizo um bloco de anotações básico no celular para contrlar as minhas
+Eu utilizo um bloco de anotações básico no celular para controlar as minhas
 compras, mas sinto falta de ter um pouco mais de controle sobre o histórico do
 que já comprei e quanto custou. Guardo as notas fiscais, mas você já viu uma
 caixa cheia delas? Não é algo exatamente motivador.
@@ -31,15 +31,15 @@ só "não repare na bagunça".
 ## Situação Atual
 
 O aplicativo não possui todas as suas funções ainda, e provavelmente demore mais
-algumas semanas para isso. Por enquanto, você será capz de criar uma lista e
+algumas semanas para isso. Por enquanto, você será capaz de criar uma lista e
 marcar itens já comprados, mas não haverá histórico de preços, nem de compras
 anteriores.
 
 Neste momento, o aplicativo requer internet para ser carregado. Os dados são
 armazenados apenas localmente e estão sujeitos ao limite de armazenamento
 imposto pelo navegador. Nenhuma informação é enviada a servidores, isso
-signfica que cada navegador terá sua própria versão de dados local, e não
-há *backup* dos dados. Além disso, os site utiliza recursos de terceiros por
+significa que cada navegador terá sua própria versão de dados local, e não
+há *backup* dos dados. Além disso, o site utiliza recursos de terceiros por
 meio de CDN.
 
 Ainda não há tutorial ou tela de ajuda rápida exibindo como o aplicativo
@@ -48,7 +48,7 @@ representa um item. No menu lateral há uma calculadora de preços para ajudar
 com as multiplicações e divisões. Isto é tudo, por hora.
 
 Feito:
-- [X] Interface gráfica adequada para o uso.
+- [X] Interface gráfica própria.
 - [X] Tela inicial e editor da lista.
 - [X] Recuperação de dados para o uso.
 - [X] Manter a lista após sair do site ou fechar o aplicativo.
